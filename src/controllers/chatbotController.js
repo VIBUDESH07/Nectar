@@ -1,23 +1,23 @@
 class ChatbotController {
-    handleIncomingMessage(req, res) {
+    handle(req, res) {
        
-        const userMessage = req.body.Body; 
+        const user= req.body.Body; 
    
 
-        let replyMessage;
+        let reply;
 
-        if (userMessage.toLowerCase().includes('hello')) {
-            replyMessage = 'Hello! How can I assist you today?';
-        } else if (userMessage.toLowerCase().includes('help')) {
-            replyMessage = 'Sure! What do you need help with?';
+        if (user.toLowerCase().includes('hello')) {
+            reply = 'Hello!';
+        } else if (user.toLowerCase().includes('help')) {
+            reply = 'Sure! What do you help with?';
         } else {
-            replyMessage = 'I am not sure how to respond to that.';
+            reply = 'I am not sure how to respond.';
         }
 
         res.set('Content-Type', 'text/xml'); 
         res.send(`
             <Response>
-                <Message>${replyMessage}</Message>
+                <Message>${reply}</Message>
             </Response>
         `);
     }

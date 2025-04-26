@@ -1,10 +1,10 @@
 const express = require('express');
-const ChatbotController = require('../controllers/chatbotController');
+const Controller = require('../controllers/chatbotController');
 
 const router = express.Router();
-const chatbotController = new ChatbotController();
+const chatController = new Controller();
 
-    router.post('/message', chatbotController.handleIncomingMessage.bind(chatbotController));
+router.post('/message', chatController.handle.bind(chatbotController));
  
 
 
