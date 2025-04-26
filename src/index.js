@@ -6,7 +6,7 @@ const app = express();
 const port = 8000;
 
 app.use(bodyParser.json());
-app.use('/api', chatbotRoutes());
+app.use('/api', chatbotRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
