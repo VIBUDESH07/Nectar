@@ -12,7 +12,7 @@ class ChatbotController {
             replyMessage = 'I am not sure how to respond to that.';
         }
 
-        res.json({ reply: replyMessage });
+        res.send(replyMessage );
     }
 }
 
